@@ -1,0 +1,370 @@
+[
+    {
+        "id": "SOP0001001",
+        "number": "SOP0001001",
+        "title": "Major Incident Management Process",
+        "description": "Standard operating procedure for handling major incidents",
+        "category": "Incident Management",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Incident Detection and Initial Assessment",
+                "details": "Verify incident severity based on impact and urgency matrix. P1 incidents affect >100 users or critical business services."
+            },
+            {
+                "step": 2,
+                "action": "Declare Major Incident",
+                "details": "Major Incident Manager declares incident, creates bridge call, and sends initial notification to stakeholders."
+            },
+            {
+                "step": 3,
+                "action": "Assemble Response Team",
+                "details": "Engage relevant technical SMEs, communications lead, and management representative within 15 minutes."
+            },
+            {
+                "step": 4,
+                "action": "Technical Investigation",
+                "details": "Perform root cause analysis using logs, monitoring tools, and recent change records. Document findings continuously."
+            },
+            {
+                "step": 5,
+                "action": "Implement Resolution",
+                "details": "Apply fix or workaround. Obtain approval for emergency changes if required. Test resolution in controlled manner."
+            },
+            {
+                "step": 6,
+                "action": "Validate and Close",
+                "details": "Confirm service restoration with affected users. Send all-clear notification. Schedule post-incident review."
+            }
+        ],
+        "roche_specific_rules": [
+            "All P1 incidents must have executive notification within 30 minutes",
+            "Customer communications every 30 minutes during active incident",
+            "Post-incident review mandatory within 5 business days"
+        ],
+        "published": "2024-01-01T00:00:00Z",
+        "updated": "2024-11-01T00:00:00Z"
+    },
+    {
+        "id": "SOP0001002",
+        "number": "SOP0001002",
+        "title": "User Account Provisioning",
+        "description": "Procedure for creating new user accounts and access",
+        "category": "Identity Management",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Receive Request",
+                "details": "Validate request comes from authorized source (HR system or manager via ServiceNow)."
+            },
+            {
+                "step": 2,
+                "action": "Create AD Account",
+                "details": "Create account in Active Directory with proper OU placement based on department and location."
+            },
+            {
+                "step": 3,
+                "action": "Assign Group Memberships",
+                "details": "Add user to appropriate security groups based on job role template."
+            },
+            {
+                "step": 4,
+                "action": "Configure Email",
+                "details": "Create Exchange Online mailbox, configure email signature template."
+            },
+            {
+                "step": 5,
+                "action": "License Assignment",
+                "details": "Assign appropriate M365 license based on user type (F1, E3, E5)."
+            },
+            {
+                "step": 6,
+                "action": "Welcome Email",
+                "details": "Send welcome email with credentials and links to self-service resources."
+            }
+        ],
+        "roche_specific_rules": [
+            "All accounts must have MFA enabled before first login",
+            "Contractors receive time-limited accounts with expiry date",
+            "Executive accounts require additional security configurations"
+        ],
+        "published": "2024-02-15T00:00:00Z",
+        "updated": "2024-10-20T00:00:00Z"
+    },
+    {
+        "id": "SOP0001003",
+        "number": "SOP0001003",
+        "title": "Change Management Process",
+        "description": "Standard procedure for implementing changes to production systems",
+        "category": "Change Management",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Submit Change Request",
+                "details": "Create RFC in ServiceNow with complete description, risk assessment, and rollback plan."
+            },
+            {
+                "step": 2,
+                "action": "Technical Review",
+                "details": "Technical approvers review implementation plan, test evidence, and dependencies."
+            },
+            {
+                "step": 3,
+                "action": "CAB Approval",
+                "details": "Present to Change Advisory Board for approval. Standard changes proceed automatically."
+            },
+            {
+                "step": 4,
+                "action": "Schedule Implementation",
+                "details": "Coordinate with affected teams, schedule maintenance window if required."
+            },
+            {
+                "step": 5,
+                "action": "Execute Change",
+                "details": "Implement change following approved plan. Document any deviations."
+            },
+            {
+                "step": 6,
+                "action": "Post-Implementation Verification",
+                "details": "Validate success criteria met, close change record, update CMDB."
+            }
+        ],
+        "roche_specific_rules": [
+            "No production changes during business freeze periods",
+            "All changes require post-implementation verification within 24 hours",
+            "Failed changes must have incident created for tracking"
+        ],
+        "published": "2024-01-20T00:00:00Z",
+        "updated": "2024-09-15T00:00:00Z"
+    },
+    {
+        "id": "SOP0001004",
+        "number": "SOP0001004",
+        "title": "VPN Access Request and Setup",
+        "description": "Procedure for requesting and configuring VPN access for remote work",
+        "category": "Network",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Submit VPN Request",
+                "details": "User or manager submits VPN access request through ServiceNow catalog."
+            },
+            {
+                "step": 2,
+                "action": "Manager Approval",
+                "details": "Direct manager approves request, confirming business need for remote access."
+            },
+            {
+                "step": 3,
+                "action": "Security Review",
+                "details": "Security team validates device compliance and user risk level."
+            },
+            {
+                "step": 4,
+                "action": "Group Assignment",
+                "details": "Add user to VPN security group in Active Directory."
+            },
+            {
+                "step": 5,
+                "action": "Client Installation",
+                "details": "Deploy VPN client via SCCM or provide manual installation instructions."
+            },
+            {
+                "step": 6,
+                "action": "Verification",
+                "details": "User tests VPN connection, confirms access to required resources."
+            }
+        ],
+        "roche_specific_rules": [
+            "VPN access requires compliant device (Intune enrolled)",
+            "Split tunnel enabled only for approved use cases",
+            "Access review conducted quarterly"
+        ],
+        "published": "2024-03-10T00:00:00Z",
+        "updated": "2024-11-05T00:00:00Z"
+    },
+    {
+        "id": "SOP0001005",
+        "number": "SOP0001005",
+        "title": "Security Incident Response",
+        "description": "Procedure for responding to security incidents and breaches",
+        "category": "Security",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Detection and Reporting",
+                "details": "Report suspected security incident immediately to Security Operations Center or via incident hotline."
+            },
+            {
+                "step": 2,
+                "action": "Initial Triage",
+                "details": "SOC analyst assesses severity, determines if incident requires escalation to CSIRT."
+            },
+            {
+                "step": 3,
+                "action": "Containment",
+                "details": "Isolate affected systems to prevent spread. Preserve evidence for investigation."
+            },
+            {
+                "step": 4,
+                "action": "Investigation",
+                "details": "Conduct forensic analysis, identify scope of compromise, determine root cause."
+            },
+            {
+                "step": 5,
+                "action": "Eradication and Recovery",
+                "details": "Remove malware/threats, restore systems from clean backups, apply security patches."
+            },
+            {
+                "step": 6,
+                "action": "Post-Incident Activities",
+                "details": "Complete incident report, implement lessons learned, update security controls."
+            }
+        ],
+        "roche_specific_rules": [
+            "Data breach incidents require legal and privacy officer notification",
+            "Preserve all evidence per legal hold requirements",
+            "External communication only through approved channels"
+        ],
+        "published": "2024-01-05T00:00:00Z",
+        "updated": "2024-12-01T00:00:00Z"
+    },
+    {
+        "id": "SOP0001006",
+        "number": "SOP0001006",
+        "title": "Backup and Recovery Validation",
+        "description": "Procedure for validating backup integrity and recovery capabilities",
+        "category": "Data Management",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Schedule Recovery Test",
+                "details": "Quarterly recovery tests scheduled for all Tier-1 applications."
+            },
+            {
+                "step": 2,
+                "action": "Select Test Scope",
+                "details": "Choose random files/databases for recovery test, document selection criteria."
+            },
+            {
+                "step": 3,
+                "action": "Execute Recovery",
+                "details": "Perform restoration to isolated recovery environment."
+            },
+            {
+                "step": 4,
+                "action": "Validate Data Integrity",
+                "details": "Verify restored data matches original, check for corruption or missing data."
+            },
+            {
+                "step": 5,
+                "action": "Document Results",
+                "details": "Record recovery time, success/failure, and any issues encountered."
+            },
+            {
+                "step": 6,
+                "action": "Remediate Gaps",
+                "details": "Address any failures, update backup policies if needed."
+            }
+        ],
+        "roche_specific_rules": [
+            "Tier-1 systems require monthly recovery validation",
+            "Recovery test results reported to IT Risk committee",
+            "Failed recovery tests must be resolved within 30 days"
+        ],
+        "published": "2024-04-01T00:00:00Z",
+        "updated": "2024-10-10T00:00:00Z"
+    },
+    {
+        "id": "SOP0001007",
+        "number": "SOP0001007",
+        "title": "Incident Resolution Documentation",
+        "description": "Standards for documenting incident resolution information",
+        "category": "Incident Management",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Summarize Problem",
+                "details": "Document clear description of the issue as reported by user and observed symptoms."
+            },
+            {
+                "step": 2,
+                "action": "Record Diagnosis Steps",
+                "details": "List all troubleshooting steps performed, including those that did not resolve issue."
+            },
+            {
+                "step": 3,
+                "action": "Document Root Cause",
+                "details": "Identify and record the underlying cause of the incident."
+            },
+            {
+                "step": 4,
+                "action": "Detail Resolution",
+                "details": "Provide step-by-step resolution actions that fixed the issue."
+            },
+            {
+                "step": 5,
+                "action": "Categorization",
+                "details": "Ensure correct category, subcategory, and configuration item assignment."
+            },
+            {
+                "step": 6,
+                "action": "Quality Check",
+                "details": "Verify resolution notes meet quality standards before closing."
+            }
+        ],
+        "roche_specific_rules": [
+            "Resolution notes must be understandable by non-technical staff",
+            "All P1/P2 incidents require detailed root cause documentation",
+            "KB article creation required for recurring issues (3+ occurrences)"
+        ],
+        "published": "2024-02-01T00:00:00Z",
+        "updated": "2024-11-15T00:00:00Z"
+    },
+    {
+        "id": "SOP0001008",
+        "number": "SOP0001008",
+        "title": "Application Performance Monitoring",
+        "description": "Procedure for monitoring and responding to application performance issues",
+        "category": "Monitoring",
+        "steps": [
+            {
+                "step": 1,
+                "action": "Alert Detection",
+                "details": "Monitoring system generates alert when thresholds exceeded (response time, error rate, CPU)."
+            },
+            {
+                "step": 2,
+                "action": "Alert Acknowledgment",
+                "details": "On-call engineer acknowledges alert within SLA (P1: 5 min, P2: 15 min)."
+            },
+            {
+                "step": 3,
+                "action": "Initial Analysis",
+                "details": "Review dashboard, identify affected components, check recent changes."
+            },
+            {
+                "step": 4,
+                "action": "Engage Application Team",
+                "details": "If infrastructure healthy, escalate to application support team."
+            },
+            {
+                "step": 5,
+                "action": "Resolution Tracking",
+                "details": "Create incident ticket, track resolution progress, update stakeholders."
+            },
+            {
+                "step": 6,
+                "action": "Post-Resolution Tuning",
+                "details": "Review alert thresholds, adjust if false positive, update runbooks."
+            }
+        ],
+        "roche_specific_rules": [
+            "All production applications must have APM configured",
+            "Alert response times are SLA-tracked",
+            "Monthly performance review required for critical applications"
+        ],
+        "published": "2024-05-15T00:00:00Z",
+        "updated": "2024-09-20T00:00:00Z"
+    }
+]

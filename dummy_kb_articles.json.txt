@@ -1,0 +1,288 @@
+[
+    {
+        "id": "KB0001001",
+        "number": "KB0001001",
+        "title": "VPN Troubleshooting Guide",
+        "short_description": "Step-by-step guide to diagnose and resolve VPN connectivity issues",
+        "category": "Network",
+        "subcategory": "VPN",
+        "content": "# VPN Troubleshooting Guide\n\n## Common Issues and Solutions\n\n### Issue 1: VPN Connection Drops Immediately\n1. Check Windows Firewall settings\n2. Verify VPN client version is 5.2.1 or higher\n3. Disable IPv6 if not required\n4. Check for conflicting software (other VPN clients)\n\n### Issue 2: Cannot Connect to VPN\n1. Verify network connectivity (ping 8.8.8.8)\n2. Check DNS resolution (nslookup vpn.company.com)\n3. Verify credentials are correct\n4. Check if account is locked in Active Directory\n\n### Issue 3: Slow VPN Performance\n1. Switch to different VPN protocol (IKEv2 recommended)\n2. Check bandwidth utilization\n3. Try connecting to different VPN gateway\n4. Disable split tunneling if enabled\n\n## Escalation Path\nIf issues persist after troubleshooting, escalate to Network Support L2.",
+        "keywords": [
+            "VPN",
+            "connectivity",
+            "network",
+            "remote access",
+            "troubleshooting"
+        ],
+        "valid": true,
+        "published": "2024-01-15T10:00:00Z",
+        "updated": "2024-12-01T14:30:00Z"
+    },
+    {
+        "id": "KB0001002",
+        "number": "KB0001002",
+        "title": "Email Configuration for Mobile Devices",
+        "short_description": "How to configure corporate email on iOS and Android devices",
+        "category": "Email",
+        "subcategory": "Mobile",
+        "content": "# Email Configuration for Mobile Devices\n\n## iOS Configuration\n1. Go to Settings > Mail > Accounts > Add Account\n2. Select Microsoft Exchange\n3. Enter corporate email address\n4. Sign in with company credentials\n5. Allow Outlook profile installation\n\n## Android Configuration\n1. Download Microsoft Outlook from Play Store\n2. Open Outlook and tap 'Add Account'\n3. Enter corporate email address\n4. Authenticate with company credentials\n5. Enable notifications when prompted\n\n## Common Issues\n- **'Account needs attention' error**: Password expired, reset in MyAccount portal\n- **Sync not working**: Check internet connection, force close and reopen app\n- **Calendar not syncing**: Verify calendar sync is enabled in settings",
+        "keywords": [
+            "email",
+            "mobile",
+            "iOS",
+            "Android",
+            "Outlook",
+            "configuration"
+        ],
+        "valid": true,
+        "published": "2024-02-20T09:00:00Z",
+        "updated": "2024-11-15T11:00:00Z"
+    },
+    {
+        "id": "KB0001003",
+        "number": "KB0001003",
+        "title": "SAP Performance Optimization",
+        "short_description": "Best practices for SAP performance and troubleshooting slow response",
+        "category": "Application",
+        "subcategory": "SAP",
+        "content": "# SAP Performance Optimization\n\n## User-Level Optimization\n1. Close unused SAP transactions\n2. Limit number of open sessions to 3 or fewer\n3. Use transaction variants for frequently used reports\n4. Schedule large reports for off-peak hours\n\n## Technical Troubleshooting\n1. Check /SDF/SMON for system monitoring\n2. Analyze ST03N for workload statistics\n3. Review SM21 for system log errors\n4. Check DB02 for database performance\n\n## Connection Issues\n- Timeout errors: Check connection pool settings\n- GUI freezing: Update SAP GUI to latest patch level\n- Memory errors: Increase local memory in saplogon.ini\n\n## Escalation\nFor persistent issues, capture SAP trace (ST01) and escalate to SAP Basis team.",
+        "keywords": [
+            "SAP",
+            "performance",
+            "optimization",
+            "timeout",
+            "GUI"
+        ],
+        "valid": true,
+        "published": "2024-03-10T14:00:00Z",
+        "updated": "2024-10-20T16:00:00Z"
+    },
+    {
+        "id": "KB0001004",
+        "number": "KB0001004",
+        "title": "Network Printer Setup and Troubleshooting",
+        "short_description": "How to add network printers and resolve common printing issues",
+        "category": "Hardware",
+        "subcategory": "Printer",
+        "content": "# Network Printer Setup and Troubleshooting\n\n## Adding a Network Printer\n1. Open Settings > Devices > Printers & Scanners\n2. Click 'Add a printer or scanner'\n3. Select printer from list or click 'The printer I want isn't listed'\n4. Enter printer IP address if not auto-discovered\n\n## Common Issues\n\n### Printer Not Found\n1. Verify printer is powered on\n2. Check network cable connection\n3. Ping printer IP address\n4. Restart print spooler service\n\n### Print Jobs Stuck\n1. Open Services and restart Print Spooler\n2. Clear print queue: C:\\Windows\\System32\\spool\\PRINTERS\n3. Reinstall printer driver\n\n### Poor Print Quality\n1. Run printer self-test\n2. Clean print heads\n3. Replace toner/ink cartridge",
+        "keywords": [
+            "printer",
+            "network",
+            "printing",
+            "spooler",
+            "hardware"
+        ],
+        "valid": true,
+        "published": "2024-01-05T08:00:00Z",
+        "updated": "2024-09-10T10:00:00Z"
+    },
+    {
+        "id": "KB0001005",
+        "number": "KB0001005",
+        "title": "Azure AD Connect Sync Troubleshooting",
+        "short_description": "Guide to diagnose and resolve Azure AD Connect synchronization issues",
+        "category": "Identity",
+        "subcategory": "Azure AD",
+        "content": "# Azure AD Connect Sync Troubleshooting\n\n## Verify Sync Status\n1. Open Azure AD Connect Synchronization Service\n2. Check Operations tab for last sync status\n3. Look for errors in Event Viewer > Applications\n\n## Common Sync Errors\n\n### Export Errors\n- AttributeValueMustBeUnique: Duplicate values exist\n- InvalidSoftMatch: Soft match attribute mismatch\n- DataValidationFailed: Data format issues\n\n### Import Errors\n- connectivity-error: Cannot reach Azure AD\n- stopped-server: AAD Connect service stopped\n\n## Force Sync\n```powershell\nStart-ADSyncSyncCycle -PolicyType Delta\nStart-ADSyncSyncCycle -PolicyType Initial\n```\n\n## Health Check\nRun AAD Connect Health from portal.azure.com",
+        "keywords": [
+            "Azure AD",
+            "sync",
+            "directory",
+            "identity",
+            "AAD Connect"
+        ],
+        "valid": true,
+        "published": "2024-04-01T12:00:00Z",
+        "updated": "2024-12-10T09:00:00Z"
+    },
+    {
+        "id": "KB0001006",
+        "number": "KB0001006",
+        "title": "Citrix Virtual Desktop Best Practices",
+        "short_description": "Optimizing Citrix virtual desktop experience for remote users",
+        "category": "Application",
+        "subcategory": "Citrix",
+        "content": "# Citrix Virtual Desktop Best Practices\n\n## Client Configuration\n1. Use Citrix Workspace App (latest version)\n2. Enable HDX features for better graphics\n3. Configure USB redirection for peripherals\n\n## Network Requirements\n- Minimum 1.5 Mbps for standard use\n- 3+ Mbps for multimedia\n- Low latency (<100ms) recommended\n\n## Troubleshooting Disconnections\n1. Check session reliability settings\n2. Verify ICA keepalive timeout\n3. Review NetScaler session policies\n4. Check client-side firewall rules\n\n## Audio/Video Issues\n- Enable UDP audio for Teams\n- Configure bandwidth policy appropriately\n- Use hardware acceleration when available",
+        "keywords": [
+            "Citrix",
+            "VDI",
+            "virtual desktop",
+            "remote",
+            "workspace"
+        ],
+        "valid": true,
+        "published": "2024-05-15T11:00:00Z",
+        "updated": "2024-11-20T15:00:00Z"
+    },
+    {
+        "id": "KB0001007",
+        "number": "KB0001007",
+        "title": "SQL Server Backup and Recovery",
+        "short_description": "Database backup procedures and recovery options",
+        "category": "Database",
+        "subcategory": "SQL Server",
+        "content": "# SQL Server Backup and Recovery\n\n## Backup Types\n- **Full**: Complete database backup (weekly)\n- **Differential**: Changes since last full (daily)\n- **Transaction Log**: Point-in-time recovery (hourly)\n\n## Backup Job Troubleshooting\n\n### Cannot Open Backup Device\n1. Check disk space (minimum 20% free)\n2. Verify SQL service account permissions\n3. Confirm backup path exists\n4. Check for file locks\n\n### Backup Taking Too Long\n1. Use COMPRESSION option\n2. Backup to faster storage\n3. Consider backup striping\n\n## Recovery Procedures\n```sql\nRESTORE DATABASE [DBName] FROM DISK = 'path\\backup.bak'\nWITH NORECOVERY;\n```",
+        "keywords": [
+            "SQL Server",
+            "backup",
+            "recovery",
+            "database",
+            "restore"
+        ],
+        "valid": true,
+        "published": "2024-02-10T13:00:00Z",
+        "updated": "2024-10-05T14:00:00Z"
+    },
+    {
+        "id": "KB0001008",
+        "number": "KB0001008",
+        "title": "Multi-Factor Authentication Setup and Troubleshooting",
+        "short_description": "How to configure and troubleshoot MFA for corporate accounts",
+        "category": "Security",
+        "subcategory": "MFA",
+        "content": "# Multi-Factor Authentication Guide\n\n## Setting Up MFA\n1. Go to https://mysignins.microsoft.com\n2. Select 'Security Info'\n3. Add authentication method:\n   - Microsoft Authenticator (recommended)\n   - Phone SMS\n   - Alternate email\n\n## Troubleshooting\n\n### Not Receiving Codes\n1. Check phone signal/internet\n2. Verify correct phone number\n3. Check app notification settings\n4. Try alternate method (call vs SMS)\n\n### Authenticator App Issues\n1. Remove and re-add account\n2. Sync time settings on device\n3. Ensure notifications enabled\n\n### Lost Access to MFA Device\n1. Use backup codes if available\n2. Contact Service Desk for reset\n3. Verify identity with manager approval",
+        "keywords": [
+            "MFA",
+            "authentication",
+            "security",
+            "2FA",
+            "authenticator"
+        ],
+        "valid": true,
+        "published": "2024-01-20T10:00:00Z",
+        "updated": "2024-12-15T08:00:00Z"
+    },
+    {
+        "id": "KB0001009",
+        "number": "KB0001009",
+        "title": "SharePoint Permissions Management",
+        "short_description": "Managing access permissions in SharePoint Online",
+        "category": "Application",
+        "subcategory": "SharePoint",
+        "content": "# SharePoint Permissions Management\n\n## Permission Levels\n- **Full Control**: All permissions\n- **Design**: Create lists and document libraries\n- **Edit**: Add, edit, delete items\n- **Contribute**: Add and edit items\n- **Read**: View only access\n\n## Granting Permissions\n1. Navigate to site or library\n2. Click Settings > Site permissions\n3. Grant access to users or groups\n\n## Troubleshooting Access Denied\n1. Check user's group membership\n2. Verify site collection permissions\n3. Review unique permissions on items\n4. Clear browser cache\n\n## Best Practices\n- Use security groups instead of individuals\n- Minimize unique permissions\n- Document permission changes",
+        "keywords": [
+            "SharePoint",
+            "permissions",
+            "access",
+            "security",
+            "collaboration"
+        ],
+        "valid": true,
+        "published": "2024-03-25T09:00:00Z",
+        "updated": "2024-11-10T11:00:00Z"
+    },
+    {
+        "id": "KB0001010",
+        "number": "KB0001010",
+        "title": "Windows Blue Screen (BSOD) Troubleshooting",
+        "short_description": "Diagnosing and resolving Windows blue screen errors",
+        "category": "Hardware",
+        "subcategory": "Laptop",
+        "content": "# Windows BSOD Troubleshooting\n\n## Common Error Codes\n- **CRITICAL_PROCESS_DIED**: System process crashed\n- **SYSTEM_SERVICE_EXCEPTION**: Driver issue\n- **MEMORY_MANAGEMENT**: RAM problem\n- **KERNEL_SECURITY_CHECK_FAILURE**: Corruption detected\n\n## Diagnostic Steps\n1. Note error code and stop code\n2. Boot into Safe Mode (F8 or hold Shift+restart)\n3. Check Event Viewer for errors\n4. Run System File Checker: `sfc /scannow`\n5. Run DISM repair: `DISM /Online /Cleanup-Image /RestoreHealth`\n\n## Hardware Checks\n- Run Windows Memory Diagnostic\n- Check disk health: `chkdsk /f /r`\n- Update device drivers\n- Check for overheating\n\n## When to Replace Hardware\n- Multiple memory test failures\n- SMART disk errors\n- Repeated same error after reinstall",
+        "keywords": [
+            "BSOD",
+            "blue screen",
+            "crash",
+            "Windows",
+            "troubleshooting"
+        ],
+        "valid": true,
+        "published": "2024-02-05T14:00:00Z",
+        "updated": "2024-09-20T10:00:00Z"
+    },
+    {
+        "id": "KB0001011",
+        "number": "KB0001011",
+        "title": "API Gateway Error Codes and Solutions",
+        "short_description": "Understanding and resolving API gateway errors",
+        "category": "Infrastructure",
+        "subcategory": "API",
+        "content": "# API Gateway Error Codes\n\n## HTTP Status Codes\n\n### 4xx Client Errors\n- **400**: Bad request, check payload format\n- **401**: Authentication required\n- **403**: Forbidden, check permissions\n- **404**: Endpoint not found\n- **429**: Rate limit exceeded\n\n### 5xx Server Errors\n- **500**: Internal server error\n- **502**: Bad gateway, backend unreachable\n- **503**: Service unavailable, scaling issue\n- **504**: Gateway timeout\n\n## Troubleshooting 503 Errors\n1. Check backend pod health\n2. Verify resource limits (CPU/memory)\n3. Review connection pool settings\n4. Scale up replicas if needed\n5. Check rate limiting configuration\n\n## Monitoring\n- Set up alerts for error rate > 1%\n- Monitor P95 latency\n- Track request throughput",
+        "keywords": [
+            "API",
+            "gateway",
+            "HTTP",
+            "errors",
+            "troubleshooting"
+        ],
+        "valid": true,
+        "published": "2024-06-10T11:00:00Z",
+        "updated": "2024-12-05T13:00:00Z"
+    },
+    {
+        "id": "KB0001012",
+        "number": "KB0001012",
+        "title": "Microsoft Teams Audio and Video Troubleshooting",
+        "short_description": "Resolving audio and video issues in Microsoft Teams",
+        "category": "Communication",
+        "subcategory": "Teams",
+        "content": "# Microsoft Teams Audio/Video Troubleshooting\n\n## Audio Issues\n\n### No Sound/Microphone\n1. Check device settings in Teams\n2. Verify Windows sound settings\n3. Test with another application\n4. Check headset connection\n\n### Audio Cutting Out\n1. Close bandwidth-heavy applications\n2. Switch from WiFi to ethernet\n3. Disable video to prioritize audio\n4. Check QoS settings with IT\n\n## Video Issues\n\n### Camera Not Working\n1. Check Teams device settings\n2. Verify camera permissions in Windows\n3. Close other apps using camera\n4. Update camera drivers\n\n### Poor Video Quality\n1. Ensure good lighting\n2. Check bandwidth (minimum 1.2 Mbps)\n3. Enable hardware acceleration\n4. Consider USB webcam over built-in",
+        "keywords": [
+            "Teams",
+            "audio",
+            "video",
+            "conferencing",
+            "troubleshooting"
+        ],
+        "valid": true,
+        "published": "2024-04-20T10:00:00Z",
+        "updated": "2024-11-25T14:00:00Z"
+    },
+    {
+        "id": "KB0001013",
+        "number": "KB0001013",
+        "title": "Password Reset Procedures",
+        "short_description": "Self-service and assisted password reset options",
+        "category": "Identity",
+        "subcategory": "Password",
+        "content": "# Password Reset Procedures\n\n## Self-Service Reset\n1. Go to https://passwordreset.company.com\n2. Enter username or email\n3. Complete MFA verification\n4. Set new password following policy\n\n## Password Policy\n- Minimum 12 characters\n- Must include: uppercase, lowercase, number, special character\n- Cannot reuse last 12 passwords\n- Expires every 90 days\n\n## Account Lockout\n- Locked after 5 failed attempts\n- Auto-unlock after 30 minutes\n- Or contact Service Desk for manual unlock\n\n## Assisted Reset (No MFA Access)\n1. Contact Service Desk\n2. Verify identity (employee ID + manager approval)\n3. Temporary password provided\n4. Must change at next login",
+        "keywords": [
+            "password",
+            "reset",
+            "account",
+            "lockout",
+            "identity"
+        ],
+        "valid": true,
+        "published": "2024-01-10T08:00:00Z",
+        "updated": "2024-10-15T09:00:00Z"
+    },
+    {
+        "id": "KB0001014",
+        "number": "KB0001014",
+        "title": "File Server Access and Permissions",
+        "short_description": "Accessing network shares and resolving permission issues",
+        "category": "Infrastructure",
+        "subcategory": "Storage",
+        "content": "# File Server Access Guide\n\n## Mapping Network Drives\n1. Open File Explorer\n2. Right-click 'This PC' > Map Network Drive\n3. Enter path: \\\\fileserver\\share\n4. Check 'Reconnect at sign-in'\n\n## Permission Denied Issues\n1. Verify you're on corporate network or VPN\n2. Check group membership with IT\n3. Request access via ServiceNow\n4. Try accessing from different machine\n\n## Slow File Server Performance\n1. Check network connectivity\n2. Close unnecessary connections\n3. Avoid copying large files during peak hours\n4. Report persistent issues to Storage team\n\n## File Recovery\n- Right-click folder > Properties > Previous Versions\n- Available for last 7 days\n- Or request restore from backup via ticket",
+        "keywords": [
+            "file server",
+            "network share",
+            "permissions",
+            "storage",
+            "access"
+        ],
+        "valid": true,
+        "published": "2024-03-15T13:00:00Z",
+        "updated": "2024-08-20T11:00:00Z"
+    },
+    {
+        "id": "KB0001015",
+        "number": "KB0001015",
+        "title": "Single Sign-On (SSO) Configuration",
+        "short_description": "Understanding SSO and troubleshooting login issues",
+        "category": "Identity",
+        "subcategory": "SSO",
+        "content": "# Single Sign-On Guide\n\n## How SSO Works\n1. User accesses application\n2. Redirect to identity provider\n3. Authenticate with credentials\n4. Receive security token\n5. Access granted to application\n\n## Supported Applications\n- Office 365 / Microsoft 365\n- Salesforce, ServiceNow, Workday\n- Custom enterprise applications\n\n## Troubleshooting Login Loop\n1. Clear browser cache and cookies\n2. Try incognito/private mode\n3. Check if app URL is correct\n4. Verify with different browser\n\n## SSO Not Working\n1. Confirm application is SSO-enabled\n2. Check identity provider status\n3. Verify user provisioning\n4. Contact Identity team for SAML issues",
+        "keywords": [
+            "SSO",
+            "single sign-on",
+            "SAML",
+            "identity",
+            "authentication"
+        ],
+        "valid": true,
+        "published": "2024-05-05T10:00:00Z",
+        "updated": "2024-12-01T12:00:00Z"
+    }
+]
